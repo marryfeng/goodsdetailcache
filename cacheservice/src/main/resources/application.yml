@@ -1,0 +1,16 @@
+spring:
+  application:
+    name: cacheservice
+  datasource:
+    url: jdbc:mysql://localhost:3306/goodsdetail
+    driver-class-name: com.mysql.jdbc.Driver
+    username: root
+    password: root
+server:
+  port: 2345
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
