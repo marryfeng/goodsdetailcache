@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: goodsservice
+server:
+  port: 1234
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
