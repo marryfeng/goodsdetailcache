@@ -1,9 +1,17 @@
 spring:
   application:
     name: goodsservice
+  datasource:
+     datasource:
+        driver-class-name: com.mysql.jdbc.Driver
+        url: jdbc:mysql://localhost:3306/goodsdetail?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+        username: root
+        password: 725810
 server:
   port: 1234
 eureka:
   client:
     service-url:
       defaultZone: http://localhost:1111/eureka/
+mybatis:
+  type-aliases-package: com.shop.learning.goodsEntity
