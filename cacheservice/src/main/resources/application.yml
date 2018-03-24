@@ -2,10 +2,11 @@ spring:
   application:
     name: cacheservice
   datasource:
-    url: jdbc:mysql://localhost:3306/goodsdetail
     driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/goodsdetail?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
     username: root
-    password: root
+    password: 725810
+
 server:
   port: 2345
 eureka:
@@ -14,3 +15,4 @@ eureka:
       defaultZone: http://localhost:1111/eureka/
 mybatis:
   mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.shop.learning.cacheEntity
