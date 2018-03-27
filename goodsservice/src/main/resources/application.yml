@@ -2,11 +2,11 @@ spring:
   application:
     name: goodsservice
   datasource:
-     datasource:
-        driver-class-name: com.mysql.jdbc.Driver
-        url: jdbc:mysql://localhost:3306/goodsdetail?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
-        username: root
-        password: 725810
+     type: com.alibaba.druid.pool.DruidDataSource
+     platform: mysql
+     url: jdbc:mysql://localhost:3306/goodsdetail?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+     username: root
+     password: 725810
 server:
   port: 1234
 eureka:
