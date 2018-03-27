@@ -1,0 +1,21 @@
+spring:
+  application:
+    name: eshop-product-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    platform: mysql
+    url: jdbc:mysql://localhost:3306/eshop?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 725810
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+
+server:
+  port: 6767
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.shop.learning.cacheEntity
