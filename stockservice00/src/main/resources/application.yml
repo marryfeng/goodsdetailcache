@@ -15,6 +15,4 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:1111/eureka/
-mybatis:
-  mapper-locations: classpath:mapper/*.xml
-  type-aliases-package: com.shop.learning.cacheEntity
+

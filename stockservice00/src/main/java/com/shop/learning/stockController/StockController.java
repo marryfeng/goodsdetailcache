@@ -1,7 +1,7 @@
 package com.shop.learning.stockController;
 
 import com.shop.learning.stockEntity.ProductStock;
-import com.shop.learning.stockService.StockService;
+import com.shop.learning.priceService.StockService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

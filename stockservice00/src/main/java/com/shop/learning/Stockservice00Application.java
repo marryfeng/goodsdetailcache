@@ -23,14 +23,12 @@ public class Stockservice00Application {
 	@Bean
 	public JedisPool jedisPool(){
 		JedisPoolConfig config=new JedisPoolConfig();
-		config.setMaxIdle(100);
-		config.setMaxTotal(1024);
-		config.setMaxWaitMillis(100);
+		config.setMaxTotal(100);
+		config.setMaxIdle(5);
+		config.setMaxWaitMillis(1000*10);
 		config.setTestOnBorrow(true);
 		return new JedisPool(config,"localhost",6379);
-
 	}
-
 
 
 

@@ -2,6 +2,7 @@ package com.shop.learning.stockMapper;
 
 import com.shop.learning.stockEntity.ProductStock;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -9,6 +10,7 @@ import java.util.List;
  * Created by fengli on 2018/3/26.
  */
 @Mapper
+@Repository
 public interface StockMapper {
 
    @Insert("insert into product_stock(valued,product_id) values(#{valued},#{product_id})")
@@ -19,7 +21,6 @@ public interface StockMapper {
     public void deleteProductStock(Integer id);
    @Select("select * from product_stock")
     public List<ProductStock> selectAll();
-
-
-
+    @Select("select * from product_stock where id=#{id}")
+    ProductStock selectById(Integer id);
 }
