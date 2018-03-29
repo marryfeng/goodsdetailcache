@@ -3,6 +3,7 @@ package com.shop.learning.priceMapper;
 import com.shop.learning.priceEntity.ProductPrice;
 
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -10,6 +11,7 @@ import java.util.List;
  * Created by fengli on 2018/3/26.
  */
 @Mapper
+@Repository
 public interface PriceMapper {
 
    @Insert("insert into product_price(valued,product_id) values(#{valued},#{product_id})")
@@ -21,6 +23,6 @@ public interface PriceMapper {
    @Select("select * from product_price")
     public List<ProductPrice> selectAll();
 
-
-
+    @Select("select * from product_price where id=#{id}")
+    ProductPrice selectById(Integer id);
 }

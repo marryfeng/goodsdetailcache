@@ -1,4 +1,4 @@
-package com.shop.learning.stockService;
+package com.shop.learning.priceService;
 
 import com.shop.learning.priceEntity.ProductPrice;
 

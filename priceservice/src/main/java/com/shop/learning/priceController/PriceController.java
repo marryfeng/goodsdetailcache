@@ -1,7 +1,7 @@
 package com.shop.learning.priceController;
 
 import com.shop.learning.priceEntity.ProductPrice;
-import com.shop.learning.stockService.PriceService;
+import com.shop.learning.priceService.PriceService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
