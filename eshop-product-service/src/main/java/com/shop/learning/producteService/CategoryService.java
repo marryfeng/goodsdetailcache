@@ -18,5 +18,5 @@ public interface CategoryService {
     public List<Category> selectAll();
 
 
-
+    Category findById(Integer id);
 }

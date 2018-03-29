@@ -1,6 +1,7 @@
 package com.shop.learning.productController;
 
 import com.shop.learning.productEntity.Brand;
+import com.shop.learning.productEntity.Category;
 import com.shop.learning.productEntity.Product;
 import com.shop.learning.producteService.BrandService;
 import com.shop.learning.producteService.ProductService;
@@ -32,6 +33,14 @@ public class ProductController {
     public String insertProduct(@RequestBody Product product){
         productService.insertProduct(product);
         return "success";
+    }
+    @RequestMapping(value = "/findById",method = RequestMethod.GET)
+    @ApiOperation(value = "商品id查询")
+    @ApiImplicitParams(
+            @ApiImplicitParam(value = "id",name = "id",dataType = "Integer",paramType = "form")
+    )
+    public Product findById(Integer id){
+        return  productService.findById(id);
     }
 
     @RequestMapping(value = "/select",method = RequestMethod.GET)

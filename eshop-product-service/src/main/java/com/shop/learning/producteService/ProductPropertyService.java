@@ -13,4 +13,6 @@ public interface ProductPropertyService {
     public void updateProductProperty(ProductProperty productProperty);
     public void deleteProductProperty(Integer id);
     public List<ProductProperty> selectAll();
+
+    ProductProperty findById(Integer id);
 }

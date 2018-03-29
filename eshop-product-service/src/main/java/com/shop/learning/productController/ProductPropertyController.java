@@ -1,6 +1,7 @@
 package com.shop.learning.productController;
 
 
+import com.shop.learning.productEntity.ProductIntroduction;
 import com.shop.learning.productEntity.ProductProperty;
 import com.shop.learning.producteService.ProductPropertyService;
 import io.swagger.annotations.Api;
@@ -40,6 +41,14 @@ public class ProductPropertyController {
       return  productPropertyService.selectAll();
     }
 
+    @RequestMapping(value = "/findById",method = RequestMethod.GET)
+    @ApiOperation(value = "商品id查询")
+    @ApiImplicitParams(
+            @ApiImplicitParam(value = "id",name = "id",dataType = "Integer",paramType = "form")
+    )
+    public ProductProperty findById(Integer id){
+        return  productPropertyService.findById(id);
+    }
     @RequestMapping(value = "/update",method = RequestMethod.POST)
     @ApiOperation(value = "更新商品属性")
     public String updateProductProperty(@RequestBody ProductProperty productProperty){

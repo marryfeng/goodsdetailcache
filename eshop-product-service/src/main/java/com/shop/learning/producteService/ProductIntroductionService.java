@@ -14,4 +14,6 @@ public interface ProductIntroductionService {
     public void updateProductIntroduction(ProductIntroduction productIntroduction);
     public void deleteProductIntroduction(Integer id);
     public List<ProductIntroduction> selectAll();
+
+    ProductIntroduction findById(Integer id);
 }

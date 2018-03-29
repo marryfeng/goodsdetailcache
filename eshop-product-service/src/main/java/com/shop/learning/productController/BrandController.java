@@ -20,7 +20,7 @@ import java.util.List;
  * Created by fengli on 2018/3/26.
  */
 @RestController
-@RequestMapping("/brand/")
+@RequestMapping("/brand")
 @Api(value = "商品品牌模块的功能测试",tags ="商品品牌模块的功能测试")
 public class BrandController {
 
@@ -38,6 +38,14 @@ public class BrandController {
     @ApiOperation(value = "商品品牌查询")
     public List<Brand> selectBrand(){
       return  brandService.selectAll();
+    }
+    @RequestMapping(value = "/findById",method = RequestMethod.GET)
+    @ApiOperation(value = "商品品牌查询")
+    @ApiImplicitParams(
+            @ApiImplicitParam(value = "id",name = "id",dataType = "Integer",paramType = "form")
+    )
+    public Brand findById(Integer id){
+        return  brandService.findById(id);
     }
 
     @RequestMapping(value = "/update",method = RequestMethod.POST)

@@ -15,6 +15,7 @@ public interface BrandService {
     public void updateBrand(Brand brand);
     public void deleteBrand(Integer id);
     public List<Brand> selectAll();
+    Brand findById(Integer id);
 
 
 

@@ -13,4 +13,6 @@ public interface ProductService {
     public void updateProduct(Product product);
     public void deleteProduct(Integer id);
     public List<Product> selectAll();
+
+    Product findById(Integer id);
 }

@@ -14,4 +14,6 @@ public interface ProductSpecificationService {
     public void updateProductSpecification(ProductSpecification productSpecification);
     public void deleteProductSpecification(Integer id);
     public List<ProductSpecification> selectAll();
+
+    ProductSpecification findById(Integer id);
 }

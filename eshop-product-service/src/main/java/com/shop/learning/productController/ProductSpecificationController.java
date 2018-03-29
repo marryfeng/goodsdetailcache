@@ -1,6 +1,7 @@
 package com.shop.learning.productController;
 
 import com.shop.learning.productEntity.Product;
+import com.shop.learning.productEntity.ProductIntroduction;
 import com.shop.learning.productEntity.ProductSpecification;
 import com.shop.learning.producteService.ProductService;
 import com.shop.learning.producteService.ProductSpecificationService;
@@ -38,6 +39,14 @@ public class ProductSpecificationController {
     @ApiOperation(value = "商品规格查询")
     public List<ProductSpecification> selectProductSpecification(){
       return  productSpecificationService.selectAll();
+    }
+    @RequestMapping(value = "/findById",method = RequestMethod.GET)
+    @ApiOperation(value = "商品id查询")
+    @ApiImplicitParams(
+            @ApiImplicitParam(value = "id",name = "id",dataType = "Integer",paramType = "form")
+    )
+    public ProductSpecification findById(Integer id){
+        return  productSpecificationService.findById(id);
     }
 
     @RequestMapping(value = "/update",method = RequestMethod.POST)

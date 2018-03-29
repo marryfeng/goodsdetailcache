@@ -1,5 +1,6 @@
 package com.shop.learning.productController;
 
+import com.shop.learning.productEntity.Brand;
 import com.shop.learning.productEntity.Category;
 import com.shop.learning.producteService.CategoryService;
 import io.swagger.annotations.*;
@@ -24,6 +25,14 @@ public class CategoryController {
     public String insertCategory(@RequestBody Category category){
         categoryService.insertCategory(category);
         return "success";
+    }
+    @RequestMapping(value = "/findById",method = RequestMethod.GET)
+    @ApiOperation(value = "商品类目查询")
+    @ApiImplicitParams(
+            @ApiImplicitParam(value = "id",name = "id",dataType = "Integer",paramType = "form")
+    )
+    public Category findById(Integer id){
+        return  categoryService.findById(id);
     }
 
     @RequestMapping(value = "/select",method = RequestMethod.GET)

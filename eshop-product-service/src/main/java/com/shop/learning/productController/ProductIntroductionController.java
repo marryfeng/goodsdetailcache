@@ -33,6 +33,14 @@ public class ProductIntroductionController {
         productIntroductionService.insertProductIntroduction(productIntroduction);
         return "success";
     }
+    @RequestMapping(value = "/findById",method = RequestMethod.GET)
+    @ApiOperation(value = "商品id查询")
+    @ApiImplicitParams(
+            @ApiImplicitParam(value = "id",name = "id",dataType = "Integer",paramType = "form")
+    )
+    public ProductIntroduction findById(Integer id){
+        return  productIntroductionService.findById(id);
+    }
 
     @RequestMapping(value = "/select",method = RequestMethod.GET)
     @ApiOperation(value = "商品查询")

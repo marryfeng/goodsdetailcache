@@ -2,6 +2,7 @@ package com.shop.learning.productMapper;
 
 import com.shop.learning.productEntity.Category;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -9,6 +10,7 @@ import java.util.List;
  * Created by fengli on 2018/3/26.
  */
 @Mapper
+@Repository
 public interface CategoryMapper {
 
    @Insert("insert into category(name,description) values(#{name},#{description})")
@@ -20,6 +22,6 @@ public interface CategoryMapper {
    @Select("select * from category")
     public List<Category> selectAll();
 
-
-
+    @Select("select * from category where id=#{id}")
+    Category findById(Integer id);
 }

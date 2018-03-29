@@ -2,6 +2,7 @@ package com.shop.learning.productMapper;
 
 import com.shop.learning.productEntity.ProductIntroduction;
 import org.apache.ibatis.annotations.*;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -9,6 +10,7 @@ import java.util.List;
  * Created by fengli on 2018/3/27.
  */
 @Mapper
+@Repository
 public interface ProductIntroductionMapper {
     @Insert("insert into product_introduction(content,product_id) values(#{content},#{product_id})")
     public void insertProductIntroduction(ProductIntroduction ProductIntroduction);
@@ -18,4 +20,6 @@ public interface ProductIntroductionMapper {
     public void deleteProductIntroduction(Integer id);
     @Select("select * from product_introduction")
     public List<ProductIntroduction> selectAll();
+    @Select("select * from product_introduction where id=#{id}")
+    ProductIntroduction findById(Integer id);
 }
