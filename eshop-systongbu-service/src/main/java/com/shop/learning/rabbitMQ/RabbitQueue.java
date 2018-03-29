@@ -6,4 +6,5 @@ package com.shop.learning.rabbitMQ;
  */
 public interface RabbitQueue {
     public static final String DATA_CHANG_QUEUE="data-change-queue";
+    public static final String AGGRE_DATA_CHANGE_QUEUE="aggre-data-change";
 }
