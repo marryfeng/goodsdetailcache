@@ -1,0 +1,23 @@
+spring:
+  application:
+    name: hystrix-turbine-service
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    platform: mysql
+    url: jdbc:mysql://localhost:3306/goodsdetail?useUnicode=true&characterEncoding=UTF-8&serverTimezone=UTC
+    username: root
+    password: 725810
+server:
+  port: 6789
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+turbine:
+  aggregator:
+    cluster-config: default
+  app-config: eshop-one-service
+  cluster-name-expression: new String("default")
+
+
+
