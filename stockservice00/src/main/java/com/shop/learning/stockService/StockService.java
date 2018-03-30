@@ -1,4 +1,4 @@
-package com.shop.learning.priceService;
+package com.shop.learning.stockService;
 
 import com.shop.learning.stockEntity.ProductStock;
 
@@ -16,5 +16,5 @@ public interface StockService {
     public List<ProductStock> selectAll();
 
 
-
+    ProductStock findStockByProductId(Integer id);
 }

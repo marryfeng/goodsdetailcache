@@ -23,4 +23,6 @@ public interface StockMapper {
     public List<ProductStock> selectAll();
     @Select("select * from product_stock where id=#{id}")
     ProductStock selectById(Integer id);
+    @Select("select * from product_stock where product_id=#{id}")
+    ProductStock findStockByProductId(Integer id);
 }

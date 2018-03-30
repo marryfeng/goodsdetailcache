@@ -1,9 +1,9 @@
-package com.shop.learning.priceServiceImpl;
+package com.shop.learning.stockServiceImpl;
 
 import com.alibaba.fastjson.JSONObject;
 import com.shop.learning.stockEntity.ProductStock;
 import com.shop.learning.stockMapper.StockMapper;
-import com.shop.learning.priceService.StockService;
+import com.shop.learning.stockService.StockService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import redis.clients.jedis.Jedis;
@@ -52,5 +52,10 @@ public class StockServiceImpl implements StockService {
     @Override
     public List<ProductStock> selectAll() {
         return stockMapper.selectAll();
+    }
+
+    @Override
+    public ProductStock findStockByProductId(Integer id) {
+        return stockMapper.findStockByProductId(id);
     }
 }
