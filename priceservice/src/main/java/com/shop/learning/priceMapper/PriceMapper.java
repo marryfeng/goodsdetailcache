@@ -25,4 +25,6 @@ public interface PriceMapper {
 
     @Select("select * from product_price where id=#{id}")
     ProductPrice selectById(Integer id);
+    @Select("select * from product_price where product_id=#{id}")
+    ProductPrice findPriceByProductId(Integer id);
 }

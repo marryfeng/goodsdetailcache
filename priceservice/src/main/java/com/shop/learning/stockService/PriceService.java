@@ -1,4 +1,4 @@
-package com.shop.learning.priceService;
+package com.shop.learning.stockService;
 
 import com.shop.learning.priceEntity.ProductPrice;
 
@@ -17,5 +17,5 @@ public interface PriceService {
     public List<ProductPrice> selectAll();
 
 
-
+    ProductPrice findPriceByProductId(Integer id);
 }

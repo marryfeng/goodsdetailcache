@@ -1,17 +1,14 @@
 package com.shop.learning.priceController;
 
 import com.shop.learning.priceEntity.ProductPrice;
-import com.shop.learning.priceService.PriceService;
+import com.shop.learning.stockService.PriceService;
 
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,7 +16,7 @@ import java.util.List;
  * Created by fengli on 2018/3/26.
  */
 @RestController
-@RequestMapping("/price/")
+@RequestMapping("/price")
 @Api("商品价格能测试")
 public class PriceController {
 
@@ -54,6 +51,13 @@ public class PriceController {
         priceService.deleteProductPrice(id);
         return "success";
     }
+
+    @RequestMapping(value = "/findPriceByProductId",method = RequestMethod.GET)
+    @ApiOperation(value = "商品价格查询",tags = "查询商品类目的测试")
+    public ProductPrice findPriceByProductId(@RequestParam(value = "id") Integer id){
+        return  priceService.findPriceByProductId(id);
+    }
+
 
 
 
